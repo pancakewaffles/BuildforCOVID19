@@ -1,0 +1,9 @@
+Flask==1.0.3
+gunicorn==19.9.0
+requests
+selenium
+beautifulsoup4
+pandas
+numpy
+matplotlib
+ibm-watson
