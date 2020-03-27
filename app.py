@@ -148,7 +148,34 @@ def search():
 
     return render_template("output.html", articles=articles, forums=forums, org=org)
 
+@app.route("/getgif", methods=['POST'])
+def search_gify():
+    no_of_gifs = 3
+    data = request.get_json(force=True)
+    print(data)
+    user_input = data["input_text"]
+    user_input = user_input.replace(" ","+")
+    print(user_input)
+    result = requests.get("https://api.gfycat.com/v1/gfycats/search?search_text=" + user_input).content
+    result = json.loads(result)
 
+    gif_count = 1
+    response_string = ""
+    # For simplicity, we will take the first gif (ie. at postion 0)
+    for i in range(len(result["gfycats"])):
+        giphyURL = result["gfycats"][i]["gifUrl"]
+        giphyTag = 0
+
+        if (result["gfycats"][i]["tags"] != None) and (gif_count< 4):
+            if len(result["gfycats"][i]["tags"]) > 0:
+                giphyTag = result["gfycats"][i]["tags"][0]
+                response_string += '<img src=' + str(giphyURL) + ' name='+str(giphyTag)+' style="height: 150px"></img>'
+                gif_count = gif_count + 1
+
+    response = {"data":response_string}
+    print(response)
+
+    return jsonify(response)
 
 if __name__ == '__main__':
     #w2v=False
