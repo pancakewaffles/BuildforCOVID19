@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>TheMix Integrated Search Bar</title>
+
+<script language="JavaScript">
+
+function dosubmit()
+{
+  searchquery=document.myform.misc.value;
+  document.myform.action = "results.html?" + searchquery;
+  window.event.returnValue = true;
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h3>TheMix Integrated Search Bar</h3>
+
+<form name="myform" method="POST" action="" onsubmit="dosubmit()">
+  <input type="text" name="misc" />
+  <br/><br/>
+  <input type="submit" value="Send text to receiver"/>
+</form>
+
+</body>
+
+</html>
