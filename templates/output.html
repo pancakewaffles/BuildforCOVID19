@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Fighting the Coronavirus one Connection at a Time</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Isolation Chatbot">
+    <meta name="keywords" content="isolation, chatbot, connections, coronavirus">
+    <meta name="theme-color" content="#FFFFFF">
+
+    <!-- Font -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <!-- Themify Icons -->
+    <link rel="stylesheet" href="/static/css/themify-icons.css">
+    <!-- Owl carousel -->
+    <link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+    <!-- Main css -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Leaflet css -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.0/leaflet.awesome-markers.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+
+    <style>
+        #mapid {
+            height: 500px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header id="map">
+        <!-- <div class="container mt-3 text-left">
+            Essential Support for under 25s
+        </div> -->
+        <div class="nav-menu fixed-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <nav class="navbar navbar-expand-lg">
+                                    <div class="collapse navbar-collapse" id="navbar">
+                                        <ul class="navbar-nav ml-auto">
+                                            <li class="nav-item"> <a class="nav-link" href="/">Chatbot</a> </li>
+                                            <li class="nav-item"> <a class="nav-link active" href="/search">QuarantineBuddies<span class="sr-only">(current)</span></a></li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        <div class="col-xs-12 text-center">
+            <h2 id="name">Quarantine Buddies</h2>
+        </div>
+
+        <div class="header">
+            <h4 id="description">Quarantine Buddies</h4>
+            <p class='longer-description'>As part of the <a href="https://maskgowhere.sg">#BuildforCOVID19</a> initiative was created to assist Singaporeans in critical need of such supplies to acquire them more easily, supported by their fellow Singaporeans. Because in times of crises, we need to support one another right?</p>
+            <p class='longer-description'><b>MaskGoHere needs your help to work!</b> Contribute info on <b>new stores</b> and <b>stock updates</b> easily via <b>Telegram: @MaskGoHereBot.</b> Got Feedback? Want to help the project? maskgohere(at)gmail.com</p>
+            <!-- <p class='longer-description'></p> -->
+        </div>
+
+        <div class="container mt-5">
+            <div class="s004">
+                <form action="/search" method="post" id="search_form">
+                    <fieldset>
+                        <div>
+                            <div class="input-field">
+                                <input class="form-control" id="college-email" type="text" placeholder="Type your college and email in form (college, email)." />
+                                <button class="btn-search" type="button" onclick="parseCollegeEmail();">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="map-container">
+                <div class="map-frame">
+                    <div id="mapid"> </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            function dataFormatter(data) {
+                let id = data['id'];
+                let college = data['college'];
+                let postcode = data['postcode'];
+                let status = data['status'];
+            }
+
+            function parseCollegeEmail() {
+                $('#college-email').val().trim().split(',')
+                alert("One person from University College has also signed up for this initiative. Send him an email?");
+                open('mailto:test@example.com?subject=subject&body=body');
+            }
+
+            function main() {
+                const data = [{
+                    "id": 1,
+                    "college": "University College",
+                    "postcode": "OX14BH",
+                    "latitude": 51.752710,
+                    "longitude": -1.251070,
+                    "status": {
+                        "availability": null,
+                        "last_updated": null
+                    }
+                }, {
+                    "id": 2,
+                    "college": "Wolfson College",
+                    "postcode": "OX26UD",
+                    "latitude": 51.770400,
+                    "longitude": -1.258260,
+                    "status": {
+                        "availability": null,
+                        "last_updated": null
+                    }
+                }];
+                L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoid2FmZmxlYm95IiwiYSI6ImNrNmYxanVldTFxdTIzbXJ6a3A2aGR3bGIifQ.cYdaZkDpOzd-QiU--rqbUA', {
+                    maxZoom: 30,
+                    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                        '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                        'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                    id: 'mapbox/streets-v11'
+                }).addTo(mymap);
+            }
+
+            //layers = {};
+            //layers['all'] = [];
+            //Object.keys(data[0]['stock']).forEach(item => {
+            //    layers[item] = [];
+            //});
+
+
+            var mymap = L.map('mapid').setView([51.752022, -1.257677], 14);
+            var layers = main();
+            var marker = L.marker([51.752710, -1.251070]).addTo(mymap);
+            var popup = L.popup().setLatLng([51.752710, -1.251070]).setContent("University College<br/>Number of Participants: 1<br/>Last Updated: 30/3/20 10:30:28").openOn(mymap);
+
+            //marker = new L.marker([51.752710, -1.251070]).bindPopup(dataFormatter(currData));
+            //layers['all'].push(marker);
+
+
+        </script>
+        <!--
+    <script type="text/javascript" src="/static/js/main.js"></script>
+     -->
+    </header>
+
+</body>
+
+</html>
