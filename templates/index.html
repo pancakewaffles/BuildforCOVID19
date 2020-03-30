@@ -45,8 +45,8 @@
                         <nav class="navbar navbar-expand-lg">
                             <div class="collapse navbar-collapse" id="navbar">
                                 <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item"> <a class="nav-link active" href="/">Chatbot<span class="sr-only">(current)</span></a> </li>
-                                    <li class="nav-item"> <a class="nav-link" href="/search">QuarantineBuddies</a></li>
+                                    <li class="nav-item"> <a class="nav-link active" href="/">QuarantineBuddy<span class="sr-only">(current)</span></a> </li>
+                                    <li class="nav-item"> <a class="nav-link" href="/search">CoronaConnect</a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -56,13 +56,25 @@
         </div>
 
         <div class="col-xs-12 text-center">
-              <h2 id="name">CoronaConnect</h2>
+        <h2 id="name"><a href="https://covid-global-hackathon.devpost.com/">#BuildforCOVID19</a> </h2>
+        <p class="longer-description">Many Oxbridge students have been kicked out of their colleges and quarantined. We are a team of two Oxbridge undergraduates who have been personally affected by this pandemic, and understand the mental health impacts due to the sudden stress and isolation.</p>
+        <p class="longer-description"> Therefore, as part of the <a href="https://covid-global-hackathon.devpost.com/">#BuildforCOVID19</a> initiative, we have decided to contribute in the little ways we can to revitalise social connections during this trying time by creating a few simple web tools.</p>
+      </div>
+
+      <div class="col-xs-12 text-center">
+        <h2 id="name">QuarantineBuddy</h2>
             </div>
 
           <div class="header">
-               <h4 id="description">Crowdsourced Interactive Map displaying the Stock of Protective Items across Singapore</h4>
-               <p class='longer-description'>As part of the <a href="https://maskgowhere.sg">#BuildforCOVID19</a> initiative was created to assist Singaporeans in critical need of such supplies to acquire them more easily, supported by their fellow Singaporeans. Because in times of crises, we need to support one another right?</p>
-               <p class='longer-description'><b>MaskGoHere needs your help to work!</b> Contribute info on <b>new stores</b> and <b>stock updates</b> easily via <b>Telegram: @MaskGoHereBot.</b> Got Feedback? Want to help the project? maskgohere(at)gmail.com</p>
+               <p class="longer-description"><b>QuarantineBuddy</b> is a simple location-based communication tool where you can exchange encouraging and positive emails with another member of the university.</p>
+               <p class="longer-description">Simply indicate your college and email in the search bar. You will be given the option to share emails with another person from the same college, or the nearest person to you.</p>
+               <p class="longer-description">Having writer's block? We recommend checking out <a href="https://www.instagram.com/positivepsychsg/">@positivepsychsg</a> on Instagram for inspiration!</p>
+               <p class="longer-description"><b>We trust that you will be mindful when crafting your email, and not write anything inappropriate!</b></p>
+          </div>
+
+          <div class="header">
+               <h4 id="description">Together, we will make it through.</h4>
+               <h3 id="description">Stay <b>at home</b>. Stay <b>connected</b>.</h3>
                <!-- <p class='longer-description'></p> -->
         </div>
 
@@ -187,7 +199,7 @@
 
       <div id="chat-column-holder" class="responsive-column content-column">
         <div class="chat-column">
-          <div id="scrollingChat"><div class="segments load"><div class="from-watson latest top"><div class="message-inner"><p>Hello, I am a Chatbot helping you combat corona loneliness.</p></div></div></div><div class="segments load"><div class="from-watson latest sub"><div class="message-inner"><p>I can help you with a number of fun tasks:<ul><li><div class="options-list" onclick="ConversationPanel.sendMessage('I want to know about the latest Coronavirus statistics');">Get latest Coronavirus statistics</div></li><li><div class="options-list" onclick="ConversationPanel.sendMessage('What are the symptoms of Coronavirus');">Symptoms of Coronavirus</div></li><li><div class="options-list" onclick="ConversationPanel.sendMessage('How to prevent Coronavirus');">Tips on preventing Coronavirus</div></li></ul></p></div></div></div></div>
+          <div id="scrollingChat"><div class="segments load"><div class="from-watson latest top"><div class="message-inner"><p>Hello, I am a QuarantineBuddy and I am here to accompany you during this trying time.</p></div></div></div><div class="segments load"><div class="from-watson latest sub"><div class="message-inner"><p>Feel free to ask me any of the following:<ul><li><div class="options-list" onclick="ConversationPanel.sendMessage('I want to know about the latest Coronavirus statistics');">Get latest Coronavirus statistics</div></li><li><div class="options-list" onclick="ConversationPanel.sendMessage('What are the symptoms of Coronavirus');">Symptoms of Coronavirus</div></li><li><div class="options-list" onclick="ConversationPanel.sendMessage('How to prevent Coronavirus');">Tips on preventing Coronavirus</div></li></ul></p></div></div></div></div>
           <p class="user-typing" id="user-typing-field"></p>
           <label for="textInput" class="inputOutline">
             <input id="textInput" class="input responsive-column" placeholder="Type something" type="text" onkeydown="ConversationPanel.inputKeyDown(event, this)" style="width:100%">

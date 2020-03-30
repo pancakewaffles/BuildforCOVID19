@@ -52,8 +52,8 @@
                                 <nav class="navbar navbar-expand-lg">
                                     <div class="collapse navbar-collapse" id="navbar">
                                         <ul class="navbar-nav ml-auto">
-                                            <li class="nav-item"> <a class="nav-link" href="/">Chatbot</a> </li>
-                                            <li class="nav-item"> <a class="nav-link active" href="/search">QuarantineBuddies<span class="sr-only">(current)</span></a></li>
+                                            <li class="nav-item"> <a class="nav-link" href="/">QuarantineBuddy</a> </li>
+                                            <li class="nav-item"> <a class="nav-link active" href="/search">CoronaConnect<span class="sr-only">(current)</span></a></li>
                                         </ul>
                                     </div>
                                 </nav>
@@ -61,16 +61,28 @@
                         </div>
                     </div>
                 </div>
-        <div class="col-xs-12 text-center">
-            <h2 id="name">Quarantine Buddies</h2>
-        </div>
+                <div class="col-xs-12 text-center">
+                <h2 id="name"><a href="https://covid-global-hackathon.devpost.com/">#BuildforCOVID19</a> </h2>
+                <p class="longer-description">Many Oxbridge students have been kicked out of their colleges and quarantined. We are a team of two Oxbridge undergraduates who have been personally affected by this pandemic, and understand the mental health impacts due to the sudden stress and isolation.</p>
+                <p class="longer-description"> Therefore, as part of the <a href="https://covid-global-hackathon.devpost.com/">#BuildforCOVID19</a> initiative, we have decided to contribute in the little ways we can to revitalise social connections during this trying time by creating a few simple web tools.</p>
+              </div>
 
-        <div class="header">
-            <h4 id="description">Quarantine Buddies</h4>
-            <p class='longer-description'>As part of the <a href="https://maskgowhere.sg">#BuildforCOVID19</a> initiative was created to assist Singaporeans in critical need of such supplies to acquire them more easily, supported by their fellow Singaporeans. Because in times of crises, we need to support one another right?</p>
-            <p class='longer-description'><b>MaskGoHere needs your help to work!</b> Contribute info on <b>new stores</b> and <b>stock updates</b> easily via <b>Telegram: @MaskGoHereBot.</b> Got Feedback? Want to help the project? maskgohere(at)gmail.com</p>
-            <!-- <p class='longer-description'></p> -->
-        </div>
+              <div class="col-xs-12 text-center">
+                <h2 id="name">CoronaConnect</h2>
+                    </div>
+
+                  <div class="header">
+                       <p class="longer-description"><b>CoronaConnect</b> is a simple location-based communication tool where you can exchange encouraging and positive emails with another member of the university.</p>
+                       <p class="longer-description">Simply indicate your college and email in the search bar. You will be given the option to share emails with another person from the same college, or the nearest person to you.</p>
+                       <p class="longer-description">Having writer's block? We recommend checking out <a href="https://www.instagram.com/positivepsychsg/">@positivepsychsg</a> on Instagram for inspiration!</p>
+                       <p class="longer-description"><b>We trust that you will be mindful when crafting your email, and not write anything inappropriate!</b></p>
+                  </div>
+
+                  <div class="header">
+                       <h4 id="description">Together, we will make it through.</h4>
+                       <h3 id="description">Stay <b>at home</b>. Stay <b>connected</b>.</h3>
+                       <!-- <p class='longer-description'></p> -->
+                </div>
 
         <div class="container mt-5">
             <div class="s004">
@@ -109,8 +121,8 @@
 
             function parseCollegeEmail() {
                 $('#college-email').val().trim().split(',')
-                alert("One person from University College has also signed up for this initiative. Send him an email?");
-                open('mailto:test@example.com?subject=subject&body=body');
+                alert("One person from University College has also signed up for this initiative. Send him/her/they an email?");
+                open('mailto:guo-zheng.yoong@univ.ox.ac.uk?subject=Hello!&body=Nice to meet you!');
             }
 
             function main() {
